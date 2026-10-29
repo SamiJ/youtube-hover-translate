@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 260px;
+      margin: 0;
+      padding: 14px 16px;
+      font: 13px/1.4 system-ui, sans-serif;
+      color: #222;
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: 14px;
+    }
+    label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    select {
+      width: 130px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Subtitle Hover Translate</h1>
+  <label>Enabled <input type="checkbox" id="enabled"></label>
+  <label>Subtitles in <select id="sourceLang"></select></label>
+  <label>Translate to <select id="targetLang"></select></label>
+  <label>Pause while hovering <input type="checkbox" id="pauseOnHover"></label>
+  <label>Translate whole line <input type="checkbox" id="showLine"></label>
+  <script src="popup.js"></script>
+</body>
+</html>

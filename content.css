@@ -1,0 +1,93 @@
+/* YouTube's control bar (z-index 59) covers the bottom of the player even
+   while it's faded out, which would block hovering the captions. Lift the
+   captions just above it, but below YouTube's menus and panels (73+). */
+.ytp-caption-window-container {
+  z-index: 60 !important;
+}
+
+/* Set by content.js while the mouse is on the captions, so they don't slide
+   when YouTube's controls show or auto-hide. */
+.yht-frozen .caption-window.ytp-caption-window-bottom {
+  margin-bottom: var(--yht-caption-margin) !important;
+  transition: none !important;
+}
+
+.yht-word {
+  border-radius: 3px;
+  cursor: help;
+  transition: background-color 0.1s;
+}
+
+.yht-word:hover,
+.yht-word.yht-active {
+  background-color: rgba(255, 214, 10, 0.45);
+}
+
+.yht-tooltip {
+  position: absolute;
+  z-index: 61;
+  display: none;
+  max-width: 380px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: rgba(18, 18, 18, 0.96);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font: 15px/1.4 "YouTube Noto", Roboto, Arial, sans-serif;
+  text-align: left;
+  pointer-events: none;
+}
+
+.yht-tooltip.yht-visible {
+  display: block;
+}
+
+.ytp-fullscreen .yht-tooltip {
+  max-width: 520px;
+  font-size: 20px;
+}
+
+.yht-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: baseline;
+}
+
+.yht-src {
+  color: #aaa;
+}
+
+.yht-arrow {
+  color: #777;
+}
+
+.yht-trans {
+  color: #ffd60a;
+  font-weight: 600;
+}
+
+.yht-dict {
+  margin-top: 6px;
+  color: #ddd;
+  font-size: 0.87em;
+}
+
+.yht-pos {
+  margin-right: 6px;
+  color: #888;
+  font-style: italic;
+}
+
+.yht-line {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  color: #eee;
+  font-style: italic;
+}
+
+.yht-error {
+  color: #ff8a80;
+  font-style: normal;
+}

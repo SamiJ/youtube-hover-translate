@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Subtitle Hover Translate",
+  "version": "1.0.0",
+  "description": "Hover over a word in YouTube subtitles to see its translation and the translation of the whole line.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://translate.googleapis.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Subtitle Hover Translate"
+  }
+}
